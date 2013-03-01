@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RCMS客户减免管理系统</title>
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">RCMS系统</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <% if(locals.success){ %>
+    <div class="alert alert-success">
+        <%= locals.success %>
+    </div>
+    <% } %>
+
+    <% if(locals.error){ %>
+    <div class="alert alert-error">
+        <%= locals.error %>
+    </div>
+    <% } %>
+
+    <form class="form-horizontal" method="post">
+        <fieldset>
+            <legend>用户登录</legend>
+            <div class="control-group">
+                <label class="control-label" for="staffno">工号</label>
+                <div class="controls">
+                    <input type="text" class="input-xlarge" id="staffno" name="staffno">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password">口令</label>
+                <div class="controls">
+                    <input type="password" class="input-xlarge" id="password" name="password">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">登入</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+</body>
+</html>

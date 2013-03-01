@@ -1,0 +1,72 @@
+<div class='stat' xmlns="http://www.w3.org/1999/html">
+    <div class="row" id="stat">
+        <form class="form-inline" action="export" method="post">
+            <fieldset>
+                <legend>查询条件</legend>
+                <div class="row">
+                    <label class="span1 control-label" for="startdate" >起始时间</label>
+                    <input class="span2" type="text" id="startdate" name="startdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
+
+                    <label class="control-label" for='enddate'>终止时间</label>
+                    <input class="span2" type="text" id="enddate" name="enddate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
+
+                    <label class="control-label" for="custno">有线证号</label>
+                    <input class="span2" type="text" name="custno" id="custno" />
+                </div>
+
+                <br/>
+                <div class="row">
+                    <label class="span1 control-label" for="cardname">证件姓名</label>
+                    <input class="span2" type="text" name="cardname" id="cardname" />
+                    <label class="control-label" for="staffno">营业工号</label>
+                    <input  class="span2" type="text" name="staffno" id="staffno" />
+                    <label class="control-label"  for="departmentno">营业区域</label>
+                    <select  class="span2" name="departmentno" id="departmentno">
+                        <option value="">*请选择</option>
+                            <% if(locals.departments) { %>
+                                <% for( var i = 0; i < locals.departments.length; i++) {
+                                    var department = locals.departments[i]; %>
+                                    <option value= '<%= department.departmentno %>' >
+                                        <%= department.name %>
+                                    </option>
+                                <% } %>
+                            <% } %>
+                    </select>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <label class="span1 control-label" for="cardtype">证件类别</label>
+                    <select class="span2" name="cardtype" id="cardtype">
+                        <option value=''>*:请选择</option>
+                        <option value='市保户'>市保户</option>
+                        <option value='区低保'>区低保</option>
+                        <option value='残疾军人'>残疾军人</option>
+                        <option value='三属'>三属</option>
+                        <option value='重度残疾低保边缘户'>重度残疾低保边缘户</option>
+                        <option value='低保边缘户'>低保边缘户</option>
+                        <option value='困难家庭救助户'>困难家庭救助户</option>
+                        <option value='怃恤优待户'>怃恤优待户</option>
+                    </select>
+                </div>
+                <br/>
+                <div class="row">
+                    <button id="query" class="span1 btn" onclick="return false;">查询</button>
+                    <button type="submit" class="span1 btn">导出</button>
+                </div>
+
+
+            </fieldset>
+        </form>
+    </div>
+    <div class="row">
+        <div style="font-size: 14px">
+            <span>入网费总金额：</span><strong id="totaljoinmount"></strong>
+            <span> 收视费总金额：</span><strong id="totalenjoymount"></strong>
+            <span> 滞纳金总金额：</span><strong id="totallatemount"></strong>
+            <span> 户数：</span><strong id="totalcustcount"></strong>
+        </div>
+        </br>
+        <table id="statTable" style="display: none"></table>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+
+/******************************** total *****************************/
+body{
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/***************************  for index ****************************/
+.container .row .primary{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/***************************** reduce.html *************************/
+.container .row .primary #cust{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#cust fieldset div{
+    margin-bottom: 4px;
+}
+
+/***************************** business.html *************************/
+#reduce fieldset div{
+    margin-bottom: 4px;
+}
+
+
+
+.container .row .secondary{
+    margin-right: 30px;
+}
+
+
+

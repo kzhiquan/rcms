@@ -1,0 +1,58 @@
+
+<div class='staff'>
+        <div class="row" id="staff">
+            <div class="form-inline">
+                <fieldset>
+                    <legend>员工管理</legend>
+                    <div class="row">
+                        <label class="span1 control-label" for="staffno">员工编号</label>
+                        <input class="span2" type="text" id="staffno">
+                        <label class="control-label" for="name">员工姓名</label>
+                        <input class="span2" type="text" id="name">
+                        <label class="control-label" for="password">员工密码</label>
+                        <input class="span2" type="text" id="password">
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <label class="span1 control-label" for="rank">操作等级</label>
+                        <select class="span2" id="rank">
+                            <option value="">*请选择</option>
+                            <option value='营业员'>营业员</option>
+                            <option value='管理员'>管理员</option>
+                            <option value='超级管理员'>超级管理员</option>
+                        </select>
+                        <label class="control-label" for="status">当前状态</label>
+                        <select class="span2" id="status">
+                            <option value="">*请选择</option>
+                            <option value='正常'>正常</option>
+                            <option value='注销'>注销</option>
+                            <option value='暂停'>暂停</option>
+                        </select>
+                        <label class="control-label" for="departmentno">所在部门</label>
+                        <select class="span2" id="departmentno">
+                            <option value="">*请选择</option>
+                            <% if(locals.departments) { %>
+                                <% for( var i = 0; i < locals.departments.length; i++) {
+                                    var department = locals.departments[i]; %>
+                                    <option value= '<%= department.departmentno %>' >
+                                    <%= department.name %>
+                                    </option>
+                                <% } %>
+                            <% } %>
+                        </select>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <button id="query" class="span1 btn">查询</button>
+                        <button id="sign" class="span1 btn">登记</button>
+                        <button id="modify" class="span1 btn btn-warning">修改</button>
+                        <button id="delete" class="span1 btn btn-danger">删除</button>
+                    </div>
+                    <br/>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <table id="staffTable" style="display: none"></table>
+        </div>
+</div>

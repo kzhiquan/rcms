@@ -1,0 +1,90 @@
+<div class='business' xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <% if(locals.cust) { %>
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>客户姓名</th>
+                    <td><%= locals.cust.cardname %></td>
+                    <th>证件类别</th>
+                    <td><%= locals.cust.cardtype %></td>
+                </tr>
+                <tr>
+                    <th>证件号码</th>
+                    <td><%= locals.cust.cardno %></td>
+                    <th>有线证号</th>
+                    <td><%= locals.cust.custno %></td>
+                </tr>
+                <tr>
+                    <th>有线户名</th>
+                    <td><%= locals.cust.cablename %></td>
+                    <th>联系电话</th>
+                    <td><%= locals.cust.telephone %></td>
+                </tr>
+                <tr>
+                    <th>机顶盒号</th>
+                    <td><%= locals.cust.stdid %></td>
+                    <th>申请地址</th>
+                    <td><%= locals.cust.address %></td>
+                </tr>
+                <tr>
+                    <th>IC 卡 号</th>
+                    <td><%= locals.cust.icid %></td>
+                    <th></th>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <% } %>
+    </div>
+    <div class="row form-inline" id="reduce">
+        <fieldset>
+            <div class="">
+                <label class="control-label" for="reducestartdate">开始日期</label>
+                <input class="span2" type="text" id="reducestartdate" placeholder="减免开始日期" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
+                <label class="control-label" for="reduceenddate">截至日期</label>
+                <input class="span2" type="text"  id="reduceenddate" placeholder="减免截至日期" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" />
+
+                <label class="control-label" for="latereducemount">滞纳金减免</label>
+                <input class="span2" type="text" id="latereducemount">
+            </div>
+            <div class="">
+                <label class="control-label" for="joinreducemount">入费减免</label>
+                <input class="span2" type="text"  id="joinreducemount">
+
+                <label class="control-label" for="joinreducetype">减免方式</label>
+                <select class="span2" id="joinreducetype">
+                    <option value='直接优惠'>直接优惠</option>
+                    <option value='现金退还'>现金退还</option>
+                    <option value="">*请选择</option>
+                </select>
+            </div>
+            <div class="">
+                <label class="control-label" for="enjoyreducemount">收视减免</label>
+                <input class="span2" type="text" id="enjoyreducemount">
+
+                <label class="control-label" for="enjoyreducetype">减免方式</label>
+                <select class="span2" id="enjoyreducetype">
+                    <option value='直接优惠'>直接优惠</option>
+                    <option value='现金退还'>现金退还</option>
+                    <option value="">*请选择</option>
+                </select>
+            </div>
+            </br>
+            <div class="row">
+                <button id="query" class="span1 btn">查询</button>
+                <button id="sign" class="span1 btn">登记</button>
+                <button id="modify" class="span1 btn btn-warning">修改</button>
+                <button id="delete" class="span1 btn btn-danger">删除</button>
+            </div>
+            <br/>
+        </fieldset>
+    </div>
+    <div class="row">
+        <table id="reduceTable" style="display: none"></table>
+    </div>
+</div>

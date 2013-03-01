@@ -1,0 +1,38 @@
+<div class='department'>
+    <div class="row" id="department">
+        <div class="form-inline">
+            <fieldset>
+                <legend>部门管理</legend>
+                <div class="row">
+                    <label class="span1 control-label" for="departmentno">部门编号</label>
+                    <input class="span2" type="text" id="departmentno">
+                    <label class="control-label" for="name">部门名称</label>
+                    <input class="span2" type="text" id="name">
+                    <label class="control-label" for="parentno">隶属部门</label>
+                    <select class="span2" id="parentno">
+                        <option value="">*请选择</option>
+                        <% if(locals.departments) { %>
+                            <% for( var i = 0; i < locals.departments.length; i++) {
+                                var department = locals.departments[i]; %>
+                                <option value= '<%= department.departmentno %>' >
+                                    <%= department.name %>
+                                </option>
+                            <% } %>
+                        <% } %>
+                    </select>
+                </div>
+                <br/>
+                <div class="row">
+                    <button id="query" class="span1 btn">查询</button>
+                    <button id="sign" class="span1 btn">登记</button>
+                    <button id="modify" class="span1 btn btn-warning">修改</button>
+                    <button id="delete" class="span1 btn btn-danger">删除</button>
+                </div>
+                <br/>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row">
+        <table id="departmentTable" style="display: none"></table>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class='reduce' xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div class="row" id="cust">
+        <div class="form-inline">
+            <fieldset>
+                <legend></legend>
+                <div class="">
+                    <label class="control-label" for="cardname">证件姓名</label>
+                    <input class="span2" type="text" id="cardname">
+
+                    <label class="control-label" for="cardtype">证件类别</label>
+                    <select class="span2" id="cardtype">
+                        <option value=''>*:请选择</option>
+                        <option value='市保户'>市保户</option>
+                        <option value='区低保'>区低保</option>
+                        <option value='残疾军人'>残疾军人</option>
+                        <option value='三属'>三属</option>
+                        <option value='重度残疾低保边缘户'>重度残疾低保边缘户</option>
+                        <option value='低保边缘户'>低保边缘户</option>
+                        <option value='困难家庭救助户'>困难家庭救助户</option>
+                        <option value='怃恤优待户'>怃恤优待户</option>
+                    </select>
+
+                    <label class="control-label" for="cardno">证件号码</label>
+                    <input class="span3" type="text" id="cardno">
+                </div>
+                <div class="">
+                    <label class="control-label" for="custno">有线证号</label>
+                    <input class="span2" type="text" id="custno">
+
+                    <label class="control-label" for="cablename">有线户名</label>
+                    <input class="span2" type="text" id="cablename">
+                </div>
+                <div class="">
+                    <label class="control-label" for="telephone">联系电话</label>
+                    <input class="span2" type="text" id="telephone">
+                    <label class="control-label" for="address">申请地址</label>
+                    <input class="span4" type="text" id="address">
+                </div>
+                 <div>
+                     <label class="control-label" for="icid">I C 卡 号</label>
+                     <input class="span3" type="text" id="icid">
+                     <label class="control-label" for="stdid">机顶盒号</label>
+                     <input class="span3" type="text" id="stdid">
+                 </div>
+                 <div>
+                     <label class="control-label" for="remark">用户备注</label>
+                     <input class="span7" type="text" id="remark">
+                 </div>
+                <br/>
+                <div class="row">
+                    <button id="query" class="span1 btn">查询</button>
+                    <button id="sign" class="span1 btn">登记</button>
+                    <button id="modify" class="span1 btn btn-warning">修改</button>
+                    <button id="delete" class="span1 btn btn-danger">删除</button>
+                </div>
+                <br/>
+            </fieldset>
+        </div>
+    </div>
+    <div class="row">
+        <table id="custTable" style="display: none"></table>
+    </div>
+</div>
